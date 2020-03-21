@@ -17,7 +17,7 @@ jobs:
   # When allowedOrigins is defined, only requests sent from one of the domains
   # listed will be accepted. The origin is sent as part as the `options` object
   # (e.g. <input name="options[origin]" value="http://yourdomain.com/post1")
-  #allowedOrigins: ["localhost", "opensourcedesign.net"]
+  #allowedOrigins: ["localhost", "auxi.online"]
 
   # (*) REQUIRED
   #
@@ -50,7 +50,7 @@ jobs:
   moderation: true
 
   # Name of the site. Used in notification emails.
-  name: "opensourcedesign.net"
+  name: "auxi.online"
 
   # Notification settings. When enabled, users can choose to receive notifications
   # via email when someone adds a reply or a new comment. This requires an account
@@ -62,17 +62,17 @@ jobs:
     # (!) ENCRYPTED
     #
     # Mailgun API key
-    #apiKey: "1q2w3e4r"
+    #apiKey: ""
 
     # (!) ENCRYPTED
     #
     # Mailgun domain (encrypted)
-    #domain: "4r3e2w1q"
+    #domain: ""
 
   # (*) REQUIRED
   #
   # Destination path (directory) for the data files. Accepts placeholders.
-  path: "jobs"
+  path: "requests"
 
   # Names of required files. If any of these isn't in the request or is empty,
   # an error will be thrown.
