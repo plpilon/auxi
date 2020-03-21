@@ -10,18 +10,18 @@ CONFIG = {
   'includes' => File.join(SOURCE, "_includes"),
   'themes' => File.join(SOURCE, "_includes", "themes"),
   'layouts' => File.join(SOURCE, "_layouts"),
-  'jobs' => File.join(SOURCE, "jobs"),
+  'requests' => File.join(SOURCE, "requests"),
   'post_ext' => "markdown",
   'theme_package_version' => "0.1.0"
 }
 
 # Usage: rake job title="Title" org="Organization Name" role="Job Role" [date="2012-02-09"]
-desc "Create a new job in #{CONFIG['jobs']}"
+desc "Create a new resquest in #{CONFIG['requests']}"
 task :job do
   abort("rake aborted: '#{CONFIG['jobs']}' directory not found.") unless FileTest.directory?(CONFIG['jobs'])
-  title = ENV['title'] || "Job Title \# Try to keep it to three words"
-  org = ENV['org'] || "Organization Name"
-  role = ENV['role'] || "Job Role \# Ex: UI Designer, UX Designer, Icon Designer"
+  title = ENV['title'] || "Title \# Try to keep it to three words"
+  org = ENV['org'] || "Your Name"
+  role = ENV['role'] || "Role \# Ex: Delivery Person, Chatter, Coach, etc"
   slug = "#{title} - #{org}".downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   begin
     date = (ENV['date'] ? Time.parse(ENV['date']) : Time.now).strftime('%Y-%m-%d')
@@ -32,7 +32,7 @@ task :job do
   end
   cat = ENV['cat'] || ""
 
-  filename = File.join(CONFIG['jobs'], "#{date}-#{slug}.#{CONFIG['post_ext']}")
+  filename = File.join(CONFIG['requests'], "#{date}-#{slug}.#{CONFIG['post_ext']}")
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
@@ -40,21 +40,17 @@ task :job do
   puts "Creating new post: #{filename}"
   open(filename, 'w') do |post|
     post.puts "---"
-    post.puts "layout: jobs"
+    post.puts "layout: requests"
     post.puts "date_posted: #{date_time}"
     post.puts "title: \"#{title.gsub(/-/,' ')}\""
     post.puts "role: \"#{role.gsub(/-/,' ')}\""
-    post.puts "organization: \"#{org.gsub(/-/,' ')}\""
-    post.puts "github: github-username"
-    post.puts "contributing_md: \# (optional) A link to your ocntibuting guidelines"
-    post.puts "contributors_md: \# (optional) A list of contributors who are reach-out-able"
-    post.puts "url: \# <your-org-url>"
-    post.puts "tags: \# Ex. interface design, branding, logo"
+    post.puts "your name: \"#{org.gsub(/-/,' ')}\""
+    post.puts "url: \# <your-url>"
+    post.puts "tags: \# Ex. Grocery, conversation, company"
     post.puts "status: \# Ex. searching, hired"
-    post.puts "rate: \# Ex. gratis, $60 hour, $1000 total, etc"
     post.puts "---"
     post.puts ""
-    post.puts "Write the description of the job here...
+    post.puts "Write the description of the request here...
 "
   end
 end # task :job
