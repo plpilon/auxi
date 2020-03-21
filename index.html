@@ -12,14 +12,14 @@ title: Jobs
     <div class="row">
         <div class="col-md-5">
           <p>
-            Need a logo designed, a usability study, or an interface-facelift? 
-            Our diverse community and extended network have got you covered.
+            Need someone to pick up a prescription or grocery for you? Need someone to teach you something or just to chat and break the isolation? 
+            Let's build community and extended network and get you the help you need in these uncertain times.
           <p>
         </div>
         <div class="col-md-5">
           <p>
-            <a class="btn btn-primary" href="/jobs/job-form/">Post A Job</a>
-            We'll review your posting as soon as we can! Free and paid gigs welcome.
+            <a class="btn btn-primary" href="/jobs/job-form/">Post A Request</a>
+            We'll review your posting as soon as we can! Help requests and offers are equally welcome.
           </p>
         </div>
     </div>
@@ -40,7 +40,7 @@ title: Jobs
                       {% if page.role %}
                       <span class="pill role">{{ page.role }}</span> @
                       {% endif %}
-                      <span class="pill organization">{{ page.organization }}</span>
+                      <span class="pill location">{{ page.location }}</span>
                     </p>
                     {% if page.compensation == "gratis" %}
                     <span class="pill compensation gratis">
@@ -58,13 +58,5 @@ title: Jobs
         </div>
     </div>
     <hr>
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <ul>
-                <li>More comfortable with Git? Use our <a href="https://github.com/opensourcedesign/jobs">git based method</a>.</li>
-                <li>Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></li>
-                <li>Checkout other places like: <a href="https://www.fossjobs.net" target="_blank">FOSS Jobs</a></li>
-            </ul>
-        </div>
-    </div>
+
 </div>
