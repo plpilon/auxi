@@ -1,15 +1,7 @@
 header_links:
-  - name: Goals
-    url: /goals/
-  - name: Articles
-    url: /articles/
-  - name: Resources
-    url: /resources/
-  - name: Projects
-    url: /projects/
   - name: Requests
     url: /requests/
-  - name: Events
-    url: /events/
+  - name: Contact Us
+    url: mailto:plpilon@outlook.com
   - name: Forum
     url: https://auxi-online.freeforums.net/
